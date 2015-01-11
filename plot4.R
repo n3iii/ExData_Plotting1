@@ -88,9 +88,9 @@ legend("topright", # create legend in top right corner
 ## lower right
 plot(x=wrkDF$ts, # use the tmestamp column of the working dataframe as the x axis
      y=wrkDF$rpwr, # use the  reactive power column of the working dataframe as the y axis
-     type='n', # draw graph without plotting points
-     ylab='Global_reactive_power', # create y axis label
-     xlab='datetime') # create x axis label
-lines(wrkDF$ts, wrkDF$rpwr, type='l') # now draw the x and y points
+     type="n", # draw graph without plotting points
+     ylab="Global_reactive_power", # create y axis label
+     xlab="datetime") # create x axis label
+lines(wrkDF$ts, wrkDF$rpwr, type="l") # now draw the x and y points
 
 dev.off()

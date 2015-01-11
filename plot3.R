@@ -36,22 +36,21 @@ wrkDF <- data.frame(ts=targetDF$ts,
                     sub3=targetDF$sub3,
                     stringsAsFactors = FALSE)
 
-## Create the histogram for plot 2 and save it to a png file using default 480x480
+## Create the line graphs for plot 2 and save it to a png file using default 480x480
 png("plot3.png")
 ## Determine the maximum value of the 3 sub-metering columns
 ymax = max(c(max(wrkDF$sub1), max(wrkDF$sub2), max(wrkDF$sub3)))
-#ymax = round(ymax,digits=-1)
 plot(wrkDF$ts, # use the tmestamp column of the working dataframe as the x axis
      wrkDF$sub1, # use sub-metering 1 to hold the y axis
-     type='n', # draw graph without plotting points
-     ylab='Energy sub metering', # create y axis label
-     xlab='', # remove x axis label
+     type="n", # draw graph without plotting points
+     ylab="Energy sub metering", # create y axis label
+     xlab="", # remove x axis label
      ylim=c(0,ymax)) # set the y range to the maximum value
-lines(wrkDF$ts, wrkDF$sub1, type='l', col='black') # plot sub-metering 1
-lines(wrkDF$ts, wrkDF$sub2, type='l', col='red') # plot sub-metering 2
-lines(wrkDF$ts, wrkDF$sub3, type='l', col='blue') # plot sub-metering 3
-legend('topright', # create legend in top right corner
-       c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), # make legend labels
+lines(wrkDF$ts, wrkDF$sub1, type="l", col="black") # plot sub-metering 1
+lines(wrkDF$ts, wrkDF$sub2, type="l", col="red") # plot sub-metering 2
+lines(wrkDF$ts, wrkDF$sub3, type="l", col="blue") # plot sub-metering 3
+legend("topright", # create legend in top right corner
+       c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), # make legend labels
        lty=c(1,1,1), # set the lines for the legend
-       col=c('black', 'red', 'blue')) # set the legend line colors
+       col=c("black", "red", "blue")) # set the legend line colors
 dev.off()

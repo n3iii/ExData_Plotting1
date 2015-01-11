@@ -32,12 +32,12 @@ wrkDF <- data.frame(ts=targetDF$ts,
                    apwr=targetDF$apwr, 
                    stringsAsFactors = FALSE)
 
-## Create the histogram for plot 2 and save it to a png file using default 480x480
+## Create the line graph for plot 2 and save it to a png file using default 480x480
 png("plot2.png")
 plot(wrkDF$ts, # use the tmestamp column of the working dataframe as the x axis
      wrkDF$apwr, # use the power column of the working dataframe as the y axis
-     type='n', # draw graph without plotting points
-     ylab='Global Active Power (killowatts)', # create y axis label
-     xlab='') # remove x axis label
-lines(wrkDF$ts, wrkDF$apwr, type='l') # now draw the x and y points
+     type="n", # draw graph without plotting points
+     ylab="Global Active Power (killowatts)", # create y axis label
+     xlab="") # remove x axis label
+lines(wrkDF$ts, wrkDF$apwr, type="l") # now draw the x and y points
 dev.off()
